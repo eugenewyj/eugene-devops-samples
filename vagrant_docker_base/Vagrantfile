@@ -4,8 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
-#  config.vm.box_version = "20170818.0.0"
-  config.vm.box_url = "https://repo.corp.qunar.com/artifactory/vagrant-qunar/ubuntu_trusty64.box"
+  config.vm.box_version = "20170818.0.0"
 #  config.vm.provision "docker"
 
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
