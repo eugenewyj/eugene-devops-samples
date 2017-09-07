@@ -2,6 +2,8 @@
 echo "替换国内镜像..."
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 cp /vagrant/sources.list /etc/apt/sources.list
+mkdir -p /etc/docker
+cp /vagrant/daemon.json /etc/docker/daemon.json
 apt-get update
 
 echo "卸载Docker老版本..."
