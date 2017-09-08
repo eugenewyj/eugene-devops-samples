@@ -21,3 +21,6 @@ echo "安装Docker CE..."
 sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 apt-get update
 apt-get -f install -y docker-ce
+
+echo "添加vagrant用户到docker用户组"
+usermod -a -G docker vagrant
