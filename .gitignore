@@ -1,2 +1,5 @@
 ## 排除vagrant的文件
 .vagrant
+
+## 忽略c编译输出的out文件
+*.out

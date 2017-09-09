@@ -24,3 +24,6 @@ apt-get -f install -y docker-ce
 
 echo "添加vagrant用户到docker用户组"
 usermod -a -G docker vagrant
+
+echo "安装libcap-dev，用于验证docker用户隔离示例代码"
+apt-get -f install -y libcap-dev
