@@ -10,13 +10,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
     config.vm.synced_folder ".", "/vagrant", mount_options: ["dmode=700,fmode=600"]
   else
-    config.vm.synced_folder ".", "/vagrant"
+#    config.vm.synced_folder ".", "/vagrant"
+    config.vm.synced_folder ".", "/vagrant", type: "nfs"
   end
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
   end
   config.vm.define :dev do |dev|
-#    dev.vm.network "private_network", ip: "10.100.199.200"
+    dev.vm.network "private_network", ip: "10.100.199.200"
     dev.vm.provision :shell, path: "bootstrap.sh"
   end
   if Vagrant.has_plugin?("vagrant-cachier")

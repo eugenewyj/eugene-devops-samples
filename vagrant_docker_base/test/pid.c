@@ -21,6 +21,7 @@ int child_main(void* args) {
     return 1;
 }
 
+// 执行： gcc pid.c -Wall -o pid.out && sudo ./pid.out
 int main(){
     printf("程序开始：\n");
     int child_pid = clone(child_main, child_stack + STACK_SIZE, CLONE_NEWPID | CLONE_NEWIPC | CLONE_NEWUTS | SIGCHLD, NULL);
