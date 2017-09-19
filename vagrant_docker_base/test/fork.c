@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
+// 执行： gcc fork.c -Wall -o fork.out && sudo ./fork.out
 int main() {
     pid_t fpid;
     fpid = fork();
